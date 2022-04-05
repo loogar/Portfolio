@@ -33,28 +33,62 @@ const ContactForm = () => {
 
 	const cardBg = useColorModeValue('#22335F', '#343D84')
 
-	const handleSubmit = (e: React.MouseEvent<HTMLElement>) => {
+	const regex =
+		/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+
+	const handleSubmit = async (e: React.MouseEvent<HTMLElement>) => {
 		e.preventDefault()
 
 		if (name === '' || email === '' || message === '') {
 			toast({
 				title: 'Error',
+				position: 'top-right',
 				description: 'Fields cannot be empty.',
 				status: 'error',
 				duration: 4000,
 				isClosable: true,
 			})
-		}
+		} else if (regex.test(email) === false) {
+			toast({
+				title: 'Not a valid e-mail.',
+				position: 'top-right',
+				description: 'the e-mail you entered is not a valid one.',
+				status: 'error',
+				duration: 4000,
+				isClosable: true,
+			})
+		} else {
+			const data = {
+				name,
+				email,
+				message,
+			}
 
-		const data = {
-			name,
-			email,
-			message,
+			fetch('/api/contact', {
+				method: 'post',
+				body: JSON.stringify(data),
+			}).catch((error) =>
+				toast({
+					position: 'top-right',
+					title: 'Success',
+					description: error,
+					status: 'error',
+					duration: 4000,
+					isClosable: true,
+				})
+			)
+			toast({
+				position: 'top-right',
+				title: 'Message successfully sent.',
+				description: `I'll get back to you asap.`,
+				status: 'success',
+				duration: 4000,
+				isClosable: true,
+			})
+			setName('')
+			setEmail('')
+			setMessage('')
 		}
-		fetch('/api/contact', {
-			method: 'post',
-			body: JSON.stringify(data),
-		})
 	}
 	return (
 		<Box
@@ -131,10 +165,11 @@ const ContactForm = () => {
 												onChange={(e) => setName(e.target.value)}
 												type='text'
 												size='md'
+												value={name}
 											/>
 										</InputGroup>
 									</FormControl>
-									<FormControl id='name'>
+									<FormControl id='email'>
 										<FormLabel color='secondary'>{t('form1')}</FormLabel>
 										<InputGroup borderColor='#E0E1E7'>
 											<InputLeftElement pointerEvents='none'>
@@ -146,15 +181,17 @@ const ContactForm = () => {
 												variant='flushed'
 												onChange={(e) => setEmail(e.target.value)}
 												size='md'
+												value={email}
 											/>
 										</InputGroup>
 									</FormControl>
-									<FormControl id='name'>
+									<FormControl id='message'>
 										<FormLabel color='secondary'>{t('form2')}</FormLabel>
 										<Textarea
 											variant='flushed'
 											onChange={(e) => setMessage(e.target.value)}
 											placeholder={t('placeholder2')}
+											value={message}
 										/>
 									</FormControl>
 									<Flex alignSelf='flex-end'>
