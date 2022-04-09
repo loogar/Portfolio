@@ -109,6 +109,7 @@ const Home: FC = () => {
 						</Text>
 						<Button
 							w='10rem'
+							_hover={{ border: 'none', bg: buttonColor, color: 'white' }}
 							onClick={() => router.push('/contact')}
 							colorScheme={buttonColor}
 							variant='outline'

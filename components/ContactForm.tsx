@@ -1,5 +1,4 @@
 import {
-	useToast,
 	useColorModeValue,
 	Box,
 	Wrap,
@@ -14,6 +13,7 @@ import {
 	InputLeftElement,
 	Input,
 	Textarea,
+	createStandaloneToast,
 } from '@chakra-ui/react'
 import Image from 'next/image'
 import useTranslation from 'next-translate/useTranslation'
@@ -28,7 +28,7 @@ const ContactForm = () => {
 	const [name, setName] = useState('')
 	const [email, setEmail] = useState('')
 	const [message, setMessage] = useState('')
-	const toast = useToast()
+	const toast = createStandaloneToast()
 	const { t } = useTranslation('common')
 
 	const cardBg = useColorModeValue('#22335F', '#343D84')
@@ -70,7 +70,7 @@ const ContactForm = () => {
 			}).catch((error) =>
 				toast({
 					position: 'top-right',
-					title: 'Success',
+					title: 'error',
 					description: error,
 					status: 'error',
 					duration: 4000,

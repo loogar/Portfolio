@@ -81,7 +81,7 @@ const extendBorder = '#ED4107'
 export const nodes = [
 	{
 		id: 'birth',
-		data: { label: 'Birth year: 1995' },
+		data: { label: 'Born on: 1995' },
 		position: { x: 200, y: 25 },
 		style: {
 			background: 'none',

@@ -16,6 +16,7 @@ import {
 	Link,
 	Button,
 	FlexProps,
+	useColorMode,
 } from '@chakra-ui/react'
 import React from 'react'
 import useTranslation from 'next-translate/useTranslation'
@@ -28,9 +29,20 @@ import Head from 'next/head'
 
 const Profile = () => {
 	const { t } = useTranslation('common')
+	const { colorMode } = useColorMode()
 
 	const tagColor = useColorModeValue('telegram', 'orange')
+	const textColor = useColorModeValue('grey', 'white')
 	const skillColor = useColorModeValue('#0088CB', 'secondary')
+	const bgColor = useColorModeValue(
+		'linear-gradient(70deg, #ff6464 40%, #5ac8fa 40%);',
+		'linear-gradient(to right, #00b4db, #0083b0)'
+	)
+
+	const bgColor2 = useColorModeValue(
+		'linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%)',
+		'linear-gradient(to right, #0f0c29, #302b63, #24243e)'
+	)
 
 	const MotionFlex = motion<FlexProps>(Flex)
 
@@ -38,7 +50,7 @@ const Profile = () => {
 
 	const router = useRouter()
 	return (
-		<Flex>
+		<Flex mb='1'>
 			<Head>
 				<title>{t('meta_profile')}</title>
 				<meta name='description' content={t('desc')} />
@@ -59,8 +71,12 @@ const Profile = () => {
 					animate={{ opacity: 1, transition: { delay: 0.2, duration: 2 } }}
 					spacing={-20}
 				>
-					<Box overflow='hidden' h={['20vh', '20vh', '20vh', '25vh', '40vh']}>
-						<Image w='100vw' height='auto' src='/cover.jpeg' />
+					<Box overflow='hidden' h={['17vh', '17vh', '23vh', '20vh', '45vh']}>
+						<Image
+							w='100vw'
+							height='auto'
+							src={colorMode === 'light' ? '/cover.jpeg' : '/cover2.jpeg'}
+						/>
 					</Box>
 
 					<Avatar
@@ -110,7 +126,7 @@ const Profile = () => {
 					<Flex gridGap={2} direction='column'>
 						<FileContainers
 							text={t('tile1')}
-							bg=' linear-gradient(70deg, #ff6464 40%, #5ac8fa 40%);'
+							bg={bgColor}
 							href='/ragools-resume-fr.pdf'
 						/>
 
@@ -165,10 +181,12 @@ const Profile = () => {
 						textAlign='center'
 						direction='column'
 						fontSize='5xl'
+						color={textColor}
 					>
 						<Text>{t('invite')}</Text>
 						<Link
-							_focus={{ outline: 'none' }}
+							_hover={{ textDecoration: 'none', transform: 'scale(1.1)' }}
+							variant='unstyled'
 							href='https://www.linkedin.com/in/ragool-krishnan/'
 							isExternal
 						>
@@ -177,13 +195,16 @@ const Profile = () => {
 
 						<Text>{t('invite2')}</Text>
 						<Button
-							_focus={{ outline: 'none' }}
+							_hover={{ textDecoration: 'none', transform: 'scale(1.1)' }}
 							variant='link'
 							color='secondary'
 							onClick={() => router.push('/contact')}
 						>
 							{t('heading4')}
 						</Button>
+						<Text mt={1} fontSize='sm'>
+							{t('invite3')}
+						</Text>
 					</Flex>
 					<Spacer />
 
@@ -191,7 +212,7 @@ const Profile = () => {
 						<FileContainers
 							text={t('tile2')}
 							href='/ragools-resume-en.pdf'
-							bg='linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%)'
+							bg={bgColor2}
 						/>
 						<Flex
 							ml={['none', 'none', 'none', 'none', 'auto']}
