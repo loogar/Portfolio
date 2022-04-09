@@ -43,6 +43,7 @@ const Sidebar = () => {
 			pos='sticky'
 			left='2'
 			h='95vh'
+			overflow='scroll'
 			marginTop='2.5vh'
 			boxShadow={`0 4px 12px 0 ${borderColor}`}
 			borderRadius={navSize == 'small' ? '15px' : '30px'}

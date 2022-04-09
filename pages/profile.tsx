@@ -111,7 +111,7 @@ const Profile = () => {
 						<FileContainers
 							text={t('tile1')}
 							bg=' linear-gradient(70deg, #ff6464 40%, #5ac8fa 40%);'
-							href='/ragools-resume-en.pdf'
+							href='/ragools-resume-fr.pdf'
 						/>
 
 						<Flex
@@ -190,7 +190,7 @@ const Profile = () => {
 					<Flex gridGap={2} direction='column'>
 						<FileContainers
 							text={t('tile2')}
-							href='/ragools-resume-fr.pdf'
+							href='/ragools-resume-en.pdf'
 							bg='linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%)'
 						/>
 						<Flex

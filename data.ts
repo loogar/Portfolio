@@ -187,7 +187,7 @@ export const PROJECT_DATA = [
 		title: 'Techies Blog',
 		english_caption: 'A Modern Blog with Headless CMS.',
 		french_caption: 'Un blog moderne avec Headless CMS.',
-		technology_used: ['Next.js', 'TailwindCSS', 'graphQl', 'graphcms'],
+		technology_used: ['Next.js', 'TailwindCSS', 'graphQl', 'graphcms', 'sass'],
 		live_link: 'https://techies-blog.vercel.app/',
 		github_link: 'https://github.com/loogar/techies_blog',
 	},
