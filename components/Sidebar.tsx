@@ -44,6 +44,19 @@ const Sidebar = () => {
 			left='2'
 			h='95vh'
 			overflow='scroll'
+			sx={{
+				msOverflowStyle: 'none',
+				scrollbarWidth: 'none',
+				'&::-webkit-scrollbar': {
+					display: 'none',
+				},
+				'&::-webkit-scrollbar-track': {
+					display: 'none',
+				},
+				'&::-webkit-scrollbar-thumb': {
+					display: 'none',
+				},
+			}}
 			marginTop='2.5vh'
 			boxShadow={`0 4px 12px 0 ${borderColor}`}
 			borderRadius={navSize == 'small' ? '15px' : '30px'}
