@@ -71,7 +71,7 @@ const Profile = () => {
 					animate={{ opacity: 1, transition: { delay: 0.2, duration: 2 } }}
 					spacing={-20}
 				>
-					<Box overflow='hidden' h={['17vh', '17vh', '23vh', '20vh', '45vh']}>
+					<Box overflow='hidden' h={['20vh', '20vh', '23vh', '20vh', '45vh']}>
 						<Image
 							w='100vw'
 							height='auto'
@@ -135,7 +135,7 @@ const Profile = () => {
 							border='2px'
 							boxShadow='lg'
 							borderColor='gray'
-							w={['18rem', '18rem', '40rem', '55rem', '30rem']}
+							w={['22.5rem', '22.5rem', '40rem', '55rem', '30rem']}
 							h='auto'
 							borderRadius='lg'
 							direction='column'
@@ -220,7 +220,7 @@ const Profile = () => {
 							p={7}
 							border='2px'
 							borderColor='grey'
-							w={['18rem', '18rem', '40rem', '55rem', '30rem']}
+							w={['22.5rem', '22.5rem', '40rem', '55rem', '30rem']}
 							borderRadius='lg'
 							gridGap={2}
 							direction='column'

@@ -21,7 +21,8 @@ import WelcomeImages from '../components/WelcomeImages'
 const Home: FC = () => {
 	const { t } = useTranslation('common')
 
-	const bgTextColor = useColorModeValue('#E15FED', 'secondary')
+	const bgTextColor = useColorModeValue('#FFC726', 'secondary')
+	const introTextColor = useColorModeValue('grey', 'white')
 	const buttonColor = useColorModeValue('teal', 'orange')
 	const MotionFlex = motion<FlexProps>(Flex)
 	const MotionText = motion<TextProps>(Text)
@@ -51,18 +52,19 @@ const Home: FC = () => {
 
 			<Stack minH={'100vh'} direction={['column', 'column', 'column', 'column', 'row']}>
 				<Flex flex={1} align={'center'} justify={'center'}>
-					<Stack spacing={6} w={['70vw', '70vw', '80vw', '80vw', '30vw']}>
-						<Heading fontSize={['2.3em', '2.3em', '2.3em', '4.2em', '4.3em']}>
+					<Stack spacing={6} w={['90vw', '90vw', '80vw', '80vw', '30vw']}>
+						<Heading fontSize={['4.3em', '2.3em', '2.3em', '4.2em', '4.3em']}>
 							<Fade in>
-								<Text>{t('action')}</Text>
+								<Text color={introTextColor}>{t('action')}</Text>
 
 								<Text
 									as={'span'}
+									color={introTextColor}
 									position={'relative'}
 									_after={{
 										content: "''",
 										width: 'full',
-										height: useBreakpointValue({ base: '20%', md: '30%' }),
+										height: '30%',
 										position: 'absolute',
 										bottom: 2,
 										left: 0,
@@ -118,7 +120,7 @@ const Home: FC = () => {
 						</Button>
 					</Stack>
 				</Flex>
-				<Flex justify='center' w={['80vw', '80vw', '90vw', '90vw', '60vw']}>
+				<Flex justify='center' w={['90vw', '90vw', '90vw', '90vw', '60vw']}>
 					<WelcomeImages />
 				</Flex>
 			</Stack>

@@ -16,7 +16,7 @@ const FileContainers: FC<IFileProps> = ({ text, bg, href }) => {
 			font-size='2em'
 			fontWeight='800'
 			height='auto'
-			width={['18em', '18em', '40em', '55em', '30em']}
+			width={['22.5em', '22.5em', '40em', '55em', '30em']}
 			padding='0.5em 1em'
 			borderRadius='0.25em'
 			display='table-cell'

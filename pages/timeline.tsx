@@ -9,13 +9,7 @@ const timeline = () => {
 	const { t } = useTranslation('common')
 
 	return (
-		<Flex
-			my='10'
-			direction='column'
-			w={['70vw', '70vw', '95vw', '95vw']}
-			h='95vh'
-			justify='center'
-		>
+		<Flex direction='column' w='95vw' h='95vh' justify='center'>
 			<Head>
 				<title>{t('meta_time')}</title>
 				<meta name='description' content={t('desc')} />

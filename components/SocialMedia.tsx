@@ -5,7 +5,7 @@ import { AiOutlineGithub, AiOutlineMail } from 'react-icons/ai'
 
 const SocialMedia: FC = () => {
 	return (
-		<HStack mx={2}>
+		<HStack justify='center' mx={2}>
 			<Link href='https://www.linkedin.com/in/ragool-krishnan' isExternal>
 				<IconButton
 					boxShadow='none'

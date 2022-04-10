@@ -103,10 +103,14 @@ const ContactForm = () => {
 				<Wrap justify='center' spacing={[3, 3, 5, 6, 20]}>
 					<WrapItem>
 						<Flex direction='column'>
-							<Heading fontSize='5xl' color='#FDAE76'>
+							<Heading fontSize={['3xl', '3xl', '5xl', '5xl']} color='#FDAE76'>
 								{t('heading8')}
 							</Heading>
-							<Box h={['10rem', '10rem', '25rem']} w={['10rem', '10rem', '25rem']}>
+							<Box
+								alignItems='center'
+								h={['10rem', '10rem', '25rem']}
+								w={['10rem', '10rem', '25rem']}
+							>
 								<Image objectFit='contain' src={ContactImage} alt='svg' />
 							</Box>
 							<Flex justify='center'>

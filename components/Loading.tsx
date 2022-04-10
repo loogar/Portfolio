@@ -1,8 +1,7 @@
 import { FC } from 'react'
-import { Box, BoxProps, chakra, Flex, FlexProps } from '@chakra-ui/react'
+import { Box, BoxProps, Flex, FlexProps } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import Head from 'next/head'
-import { animatedColor } from '../data'
 
 const Loading: FC = () => {
 	const MotionBox = motion<BoxProps>(Box)

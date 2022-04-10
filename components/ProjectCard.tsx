@@ -55,7 +55,7 @@ const ProjectCard: FC<IProjectProps> = ({
 			borderRadius='lg'
 			overflow={'hidden'}
 			height='auto'
-			width={['20rem', '20rem', '21rem', '24rem']}
+			width={['22rem', '22rem', '21rem', '24rem']}
 		>
 			<Flex overflow={'hidden'} direction='column'>
 				<Image h='10rem' w='28rem' objectFit='fill' src={src} alt={alt} />

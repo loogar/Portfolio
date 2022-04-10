@@ -142,7 +142,7 @@ const Sidebar = () => {
 						<Heading as='h3' size='sm'>
 							Ragool Krishnan
 						</Heading>
-						<Text color='gray'>Web Developer</Text>
+						<Text color='gray'> {t('profession')}</Text>
 					</Flex>
 				</Flex>
 			</Flex>
